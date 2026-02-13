@@ -12,7 +12,7 @@ from model import get_model
 # (Keep Constants as is)
 # --- Constants ---
 DEFAULT_API_URL = "https://agents-course-unit4-scoring.hf.space"
-MODEL_ID = "gemini/gemini-2.5-flash-preview-04-17"
+MODEL_ID = "openai/gpt-4o-mini"
 
 # --- Async Question Processing ---
 async def process_question(agent, question: str, task_id: str) -> Dict:
@@ -85,7 +85,6 @@ async def run_and_submit_all( profile: gr.OAuthProfile | None):
              print("Fetched questions list is empty.")
              return "Fetched questions list is empty or invalid format.", None
         print(f"Fetched {len(questions_data)} questions.")
-        questions_data = questions_data[:2]
     except requests.exceptions.RequestException as e:
         print(f"Error fetching questions: {e}")
         return f"Error fetching questions: {e}", None

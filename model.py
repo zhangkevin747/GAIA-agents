@@ -49,7 +49,7 @@ def get_lite_llm_model(model_id: str,  **kwargs) -> WrapperLiteLLMModel:
     Returns:
         LiteLLMModel: LiteLLM model instance.
     """
-    return WrapperLiteLLMModel(model_id=model_id, api_key=os.getenv("GEMINI_API"), **kwargs)
+    return WrapperLiteLLMModel(model_id=model_id, **kwargs)
 
 
 @lru_cache(maxsize=1)
